@@ -1,0 +1,9 @@
+wait-time    2   secs hearing ringback
+queue-to     skill 1    pri h
+announcement 4511
+wait-time    180 secs hearing music
+collect      1    digits after announcement 4512     for none
+goto step    4             if digits           =      1
+
+goto step    9             if unconditionally
+disconnect   after announcement none
