@@ -1,0 +1,15 @@
+wait-time    2   secs hearing ringback
+goto step    6             if holiday          in     table 1
+goto step    7             if holiday          in     table 2
+goto step    8             if ani              in     table 2 
+goto step    10            if unconditionally
+disconnect   after announcement 4504
+disconnect   after announcement 4505
+disconnect   after announcement none
+
+collect      1    digits after announcement 4510     for none
+goto vector  20   @step 1  if digits           <=     2 //skill 1
+goto vector  21   @step 1  if digits           =      3 //skill 2
+goto vector  22   @step 1  if digits           =      4 //skill 4
+goto step 10 if digits = 0                              //repeat annc
+goto vector  20   @step 1  if unconditionally           //queue to skill 1 
